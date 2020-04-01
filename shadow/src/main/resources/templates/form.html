@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+
+<form action="form" method="post">
+    <p>Name
+        <input type="text" name="nameT" />
+        <input type="submit" value="Save to DB" /></p>
+</form>
+<p th:text="${status}"/>
+<ui>
+    <li th:each="name : ${names}" th:text="${name}">
+</ui>
+
+</body>
+</html>

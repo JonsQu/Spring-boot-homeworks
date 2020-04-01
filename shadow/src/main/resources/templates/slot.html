@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Slot Machine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+    <img th:each="imge : ${#httpSession.getAttribute('imges')}" th:src="@{./resources/static/${'imge'}.png}" style="width: 200px; height: 200px"/>
+    <img th:src="@{images/1.png}" style="width: 200px; height: 200px"/>
+    <p th:each="imge : ${#httpSession.getAttribute('imges')}" th:text="${imge}"/>
+    <form action="slot" method="post">
+        <input type="submit" value="Spin!" />
+    </form>
+    <p th:text="${#httpSession.getAttribute('money')} ? ${#httpSession.getAttribute('money')} + '€' : '10€'"/>
+</body>
+</html>
